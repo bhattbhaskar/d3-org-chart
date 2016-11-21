@@ -1,0 +1,6 @@
+{
+  "name": "D3-org-chart",
+  "tagline": "",
+  "body": "# D3 ORG CHART\r\n\r\n### Description\r\nThis is the small demo for the utilization of d3.js as org chart.You can use this demo or script in your project (Licensed under MIT). You can also contribute this project and file a bug or make a pull request.\r\n\r\nLayout of chart :-\r\n![d3 or chart](http://resourceguruapp.com/assets/marketing/utilization-capacity-planning-f61feaecf78d82a3c3bf5ce1bc387667.jpg)\r\n\r\nLicense\r\n----\r\n\r\nMIT",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

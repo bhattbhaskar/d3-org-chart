@@ -1,91 +1,48 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="assets/style.css" />
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>D3-org-chart by php-dedicated-developers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">D3-org-chart</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/php-dedicated-developers/d3-org-chart" class="btn">View on GitHub</a>
+      <a href="https://github.com/php-dedicated-developers/d3-org-chart/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/php-dedicated-developers/d3-org-chart/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <!--        D3 Organization Chart Imports  Start  -->
-        <script src="./assets/d3.v3.min.js"> </script>
-        <script src="./assets/d3-organization-chart.js"> </script>
-        <script src="./assets/flare_data.js"> </script>
-        <link rel="stylesheet" href="assets/d3-organization-chart.css?v=0.1" />
-        <!--        D3 Organization Chart Imports  End   -->
-        <script>
-            // D3 Organization Chart -- Start
-            var config = {
-                width               : window.innerWidth,
-                height              : 500,
-                detailOnZoom        : true,                 // default: false
-                labelField          : "name",               // default: "name"
-                showImageOnDetail   : true,                 // default: false
-                imageField          : "image",              // default: "image"
-                //defaultImageUrl     : "assets/noimage.svg", // defalut: "noimage.svg"
-                onnoderightclicked  : myRightClickCallback,
-                onload              : chartOnLoad
-            };
-            var myChart = D3OrganizationChart("myOrganizationChart", flare, config);
-            // D3 Organization Chart -- End
+    <section class="main-content">
+      <h1>
+<a id="d3-org-chart" class="anchor" href="#d3-org-chart" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>D3 ORG CHART</h1>
 
-            function myRightClickCallback(data) {
-                var text = document.getElementById("event1");
-                    text.style.color = "red";
-                setTimeout(function() {
-                    text.style.color = "#34495E";
-                }, 1000);
+<h3>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description</h3>
 
-                console.log(JSON.stringify(data));
-            };
+<p>This is the small demo for the utilization of d3.js as org chart.You can use this demo or script in your project (Licensed under MIT). You can also contribute this project and file a bug or make a pull request.</p>
 
-            function chartOnLoad() {
-                var text = document.getElementById("event2");
-                    text.style.color = "red";
-                setTimeout(function() {
-                    text.style.color = "#34495E";
-                }, 1000);
+<p>Layout of chart :-
+<img src="http://resourceguruapp.com/assets/marketing/utilization-capacity-planning-f61feaecf78d82a3c3bf5ce1bc387667.jpg" alt="d3 or chart"></p>
 
-                //myChart.collapseNode(2);
-                // myChart.collapseNode(16);
-                // myChart.collapseNode(29);
-                // myChart.collapseNode(34);
-                // myChart.collapseNode(36);
-                // myChart.collapseNode(45);
-                myChart.collapseNode(1);
-                myChart.expandNode(2);
-                myChart.reScaleCurrentTree();
-                // myChart.expandNode(1);
-                // myChart.reScaleCurrentTree();
-                // myChart.expandNode(2);
-                // myChart.reScaleCurrentTree();
-            };
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-            function dataload() {
+<p>MIT</p>
 
-            }
-        </script>
-    </head>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/php-dedicated-developers/d3-org-chart">D3-org-chart</a> is maintained by <a href="https://github.com/php-dedicated-developers">php-dedicated-developers</a>.</span>
 
-    <body>
-        <div id="toolbar" style="display:block;">
-            <ul>
-                <li>Events : </li>
-                <li><input type="button" onclick="myChart.toggleSelectedNode();" value="Toggle Node" /></li>
-                <li><input type="button" onclick="myChart.reScaleCurrentTree();" value="Rescale Current Tree" /></li>
-                <li><input type="button" onclick="myChart.collapseNode(1);" value="Collapse Node 1" /></li>
-                <li><input type="button" onclick="myChart.expandNode(2);" value="Expand Node 2" /></li>
-                <li><input type="button" onclick="myChart.expandNode(10);" value="Expand Node 10" /></li>
-                <li><input type="button" onclick="alert(JSON.stringify(getSelectedValue()));" value="Get Value of Selected Node" /></li>
-            </ul>
-            <ul class="event-list" style="display: none;">
-                <li><div id="event1">onnoderightclicked</div></li>
-                <li><div id="event2">onload</div></li>
-            </ul> 
-        </div>
-        <div id="toolbar" style="display:none;">
-            <h1>D3 Org Chart</h1>
-        </div>
-        <div id="container">
-            <div id="myOrganizationChart"></div>
-        </div>
-    </body>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
 </html>
