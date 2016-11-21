@@ -1,0 +1,47 @@
+.node {
+    cursor: pointer;
+}
+
+.node rect.has-child {
+    fill: #009688;
+}
+
+.node:hover rect.has-child {
+    fill: #009688;
+}
+
+.node rect {
+    fill: #9e9e9e;
+}
+
+.node:hover rect {
+    fill: #3498DB;
+}
+
+.selected-node {
+    fill: #F39C12 !important;
+}
+
+.node:hover .selected-node {
+    fill: #F1C40F !important;
+}
+
+.link {
+    fill: none;
+    stroke: #2980B9;
+    stroke-width: 1.5px;
+}
+
+.container {
+    background: #fff;
+}
+
+.node-big-title {
+    fill: #fff;
+    font: 16px;
+}
+
+.detail-text {
+    fill: #fff;
+    font-size: 10px;
+}

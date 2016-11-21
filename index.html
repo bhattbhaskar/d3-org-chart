@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/style.css" />
+
+        <!--        D3 Organization Chart Imports  Start  -->
+        <script src="http://d3js.org/d3.v3.min.js"> </script>
+        <script src="assets/d3-organization-chart.js"> </script>
+        <script src="assets/flare_data.js"> </script>
+        <link rel="stylesheet" href="assets/d3-organization-chart.css?v=0.1" />
+        <!--        D3 Organization Chart Imports  End   -->
+        <script>
+            // D3 Organization Chart -- Start
+            var config = {
+                width               : window.innerWidth,
+                height              : 500,
+                detailOnZoom        : true,                 // default: false
+                labelField          : "name",               // default: "name"
+                showImageOnDetail   : true,                 // default: false
+                imageField          : "image",              // default: "image"
+                //defaultImageUrl     : "assets/noimage.svg", // defalut: "noimage.svg"
+                onnoderightclicked  : myRightClickCallback,
+                onload              : chartOnLoad
+            };
+            var myChart = D3OrganizationChart("myOrganizationChart", flare, config);
+            // D3 Organization Chart -- End
+
+            function myRightClickCallback(data) {
+                var text = document.getElementById("event1");
+                    text.style.color = "red";
+                setTimeout(function() {
+                    text.style.color = "#34495E";
+                }, 1000);
+
+                console.log(JSON.stringify(data));
+            };
+
+            function chartOnLoad() {
+                var text = document.getElementById("event2");
+                    text.style.color = "red";
+                setTimeout(function() {
+                    text.style.color = "#34495E";
+                }, 1000);
+
+                //myChart.collapseNode(2);
+                // myChart.collapseNode(16);
+                // myChart.collapseNode(29);
+                // myChart.collapseNode(34);
+                // myChart.collapseNode(36);
+                // myChart.collapseNode(45);
+                myChart.collapseNode(1);
+                myChart.expandNode(2);
+                myChart.reScaleCurrentTree();
+                // myChart.expandNode(1);
+                // myChart.reScaleCurrentTree();
+                // myChart.expandNode(2);
+                // myChart.reScaleCurrentTree();
+            };
+
+            function dataload() {
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="toolbar" style="display:block;">
+            <ul>
+                <li>Events : </li>
+                <li><input type="button" onclick="myChart.toggleSelectedNode();" value="Toggle Node" /></li>
+                <li><input type="button" onclick="myChart.reScaleCurrentTree();" value="Rescale Current Tree" /></li>
+                <li><input type="button" onclick="myChart.collapseNode(1);" value="Collapse Node 1" /></li>
+                <li><input type="button" onclick="myChart.expandNode(2);" value="Expand Node 2" /></li>
+                <li><input type="button" onclick="myChart.expandNode(10);" value="Expand Node 10" /></li>
+                <li><input type="button" onclick="alert(JSON.stringify(getSelectedValue()));" value="Get Value of Selected Node" /></li>
+            </ul>
+            <ul class="event-list" style="display: none;">
+                <li><div id="event1">onnoderightclicked</div></li>
+                <li><div id="event2">onload</div></li>
+            </ul> 
+        </div>
+        <div id="toolbar" style="display:none;">
+            <h1>D3 Org Chart</h1>
+        </div>
+        <div id="container">
+            <div id="myOrganizationChart"></div>
+        </div>
+    </body>
+</html>
